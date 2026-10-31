@@ -7,8 +7,8 @@
   --fondo: #f2f5f7;
   --superficie: #ffffff;
   --tinta: #1c2b34;
-  --tinta-suave: #50626d;
-  --primario: #da81dd;
+  --tinta-suave: #282a2c;
+  --primario: #c34de0;
   --primario-oscuro: #7e1c79;
   --linea: #d5dee4;
   --etiqueta: #e3eef3;
@@ -67,7 +67,7 @@ ul, ol {
   left: -999px;
   top: 0;
   background: var(--primario);
-  color: #fff;
+  color: #ffffff;
   padding: 0.5rem 1rem;
   z-index: 10;
 }
@@ -92,7 +92,7 @@ ul, ol {
   position: sticky;
   top: 1.5rem;
   background: var(--primario);
-  color: #fff;
+  color: #d4e7eb;
   padding: 2rem 1.5rem;
   border-radius: var(--radio);
 }
@@ -105,7 +105,7 @@ ul, ol {
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.85);
   margin: 0 auto 1.25rem;
-  background: #cfdde4;
+  background: #ffffff;
 }
 
 .panel h1 {
@@ -119,14 +119,14 @@ ul, ol {
 .titular {
   margin: 0 0 1rem;
   text-align: center;
-  color: #d4e6ee;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .presentacion {
   margin: 0 0 1.5rem;
   font-size: 1rem;
-  color: #eef6f9;
+  color: #ffffff;
 }
 
 .menu {
@@ -141,7 +141,7 @@ ul, ol {
 .menu a {
   display: block;
   padding: 0.3rem 0;
-  color: #fff;
+  color: #a4f1ff;
   text-decoration: none;
 }
 
@@ -150,7 +150,7 @@ ul, ol {
 }
 
 .menu a:focus-visible {
-  outline-color: #fff;
+  outline-color: #a4f1ff;
 }
 
 /* ---------- Secciones ---------- */
@@ -313,5 +313,5 @@ p {
   .menu, .saltar { display: none; }
   .panel { position: static; color: #000; background: none; border: 1px solid #999; }
   .panel h1, .titular, .presentacion { color: #000; }
-  body { background: #fff; }
+  body { background: #a4f1ff; }
 }
