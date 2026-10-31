@@ -1,0 +1,317 @@
+/* ==========================================================
+   Currículum web - Hoja de estilos
+   Para cambiar los colores, edita las variables de :root
+   ========================================================== */
+
+:root {
+  --fondo: #f2f5f7;
+  --superficie: #ffffff;
+  --tinta: #1c2b34;
+  --tinta-suave: #50626d;
+  --primario: #da81dd;
+  --primario-oscuro: #7e1c79;
+  --linea: #d5dee4;
+  --etiqueta: #e3eef3;
+  --radio: 6px;
+
+  --fuente-titulos: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  --fuente-texto: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primario);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--primario-oscuro);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--primario);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlace para saltar al contenido (accesibilidad) */
+.saltar {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--primario);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.saltar:focus {
+  left: 0;
+}
+
+/* ---------- Estructura general ---------- */
+.pagina {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ---------- Panel lateral ---------- */
+.panel {
+  position: sticky;
+  top: 1.5rem;
+  background: var(--primario);
+  color: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radio);
+}
+
+.foto {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  margin: 0 auto 1.25rem;
+  background: #cfdde4;
+}
+
+.panel h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.65rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+  text-align: center;
+}
+
+.titular {
+  margin: 0 0 1rem;
+  text-align: center;
+  color: #d4e6ee;
+  font-weight: 600;
+}
+
+.presentacion {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  color: #eef6f9;
+}
+
+.menu {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.3rem 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu a:focus-visible {
+  outline-color: #fff;
+}
+
+/* ---------- Secciones ---------- */
+main section {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  color: var(--primario-oscuro);
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--linea);
+}
+
+h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0.4rem;
+}
+
+h2 + h3 {
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  max-width: 70ch;
+}
+
+.detalle {
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+/* ---------- Etiquetas (intereses y habilidades) ---------- */
+.etiquetas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.etiquetas li {
+  background: var(--etiqueta);
+  color: var(--primario-oscuro);
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ---------- Línea de tiempo (formación y experiencia) ---------- */
+.linea-tiempo {
+  list-style: none;
+  border-left: 3px solid var(--linea);
+  margin-left: 0.4rem;
+}
+
+.linea-tiempo > li {
+  position: relative;
+  padding: 0 0 1.25rem 1.5rem;
+}
+
+.linea-tiempo > li:last-child {
+  padding-bottom: 0;
+}
+
+.linea-tiempo > li::before {
+  content: "";
+  position: absolute;
+  left: -0.6rem;
+  top: 0.35rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  background: var(--primario);
+  border: 3px solid var(--superficie);
+  border-radius: 50%;
+}
+
+.linea-tiempo h3 {
+  margin-top: 0;
+}
+
+.linea-tiempo ul {
+  padding-left: 1.2rem;
+}
+
+/* ---------- Listas simples (cursos y contacto) ---------- */
+.lista-simple {
+  list-style: none;
+}
+
+.lista-simple li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.lista-simple li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Proyectos ---------- */
+.proyecto {
+  border: 1px solid var(--linea);
+  border-left: 5px solid var(--primario);
+  border-radius: var(--radio);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.proyecto h3 {
+  margin-top: 0;
+}
+
+.proyecto p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  text-align: center;
+  padding: 1.5rem 1rem 2.5rem;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+.pie p {
+  margin: 0 auto;
+}
+
+/* ---------- Adaptación a pantallas pequeñas ---------- */
+@media (max-width: 860px) {
+  .pagina {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .panel {
+    position: static;
+  }
+
+  main section {
+    padding: 1.4rem 1.25rem;
+  }
+}
+
+/* ---------- Impresión ---------- */
+@media print {
+  .menu, .saltar { display: none; }
+  .panel { position: static; color: #000; background: none; border: 1px solid #999; }
+  .panel h1, .titular, .presentacion { color: #000; }
+  body { background: #fff; }
+}
